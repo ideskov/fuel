@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:13.1
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: fuel
+      POSTGRES_PASSWORD: super_secret
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+      - ${PWD}/src/main/resources/db-init:/docker-entrypoint-initdb.d
+
+volumes:
+  pg-data:
