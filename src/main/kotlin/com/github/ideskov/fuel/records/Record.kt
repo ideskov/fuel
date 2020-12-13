@@ -1,18 +1,16 @@
 package com.github.ideskov.fuel.records
 
+import org.springframework.data.annotation.Id
+import org.springframework.data.relational.core.mapping.Column
+import org.springframework.data.relational.core.mapping.Table
 import java.time.LocalDate
 import java.util.*
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
 
-@Table(name = "records")
-@Entity
+@Table("records")
 data class Record(
         @Id
         val id: UUID,
-        @Column(name = "distance_in_miles")
+        @Column("distance_in_miles")
         val distanceInMiles: Int,
         val litres: Int,
         val from: LocalDate,

@@ -1,9 +1,5 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/fuel
+  r2dbc:
+    url: r2dbc:postgres://localhost/fuel
     username: fuel
     password: super_secret
-  jpa:
-    properties:
-      hibernate:
-        globally_quoted_identifiers: true

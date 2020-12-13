@@ -1,6 +1,6 @@
 package com.github.ideskov.fuel.records
 
-import org.springframework.data.repository.CrudRepository
+import org.springframework.data.repository.reactive.ReactiveCrudRepository
 import java.util.*
 
-interface RecordRepository : CrudRepository<Record, UUID>
+interface RecordRepository : ReactiveCrudRepository<Record, UUID>
