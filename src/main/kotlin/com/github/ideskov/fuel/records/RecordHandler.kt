@@ -18,7 +18,7 @@ class RecordHandler(val recordRepository: RecordRepository) {
             .let { UUID.fromString(it) }
         return recordRepository.findById(id)?.toDto()
             ?.let { ServerResponse.ok().bodyValue(it).awaitFirst() }
-            ?: return ServerResponse.notFound().build().awaitFirst()
+            ?: ServerResponse.notFound().build().awaitFirst()
     }
 
     suspend fun getRecords(request: ServerRequest): ServerResponse = recordRepository.findAll()
